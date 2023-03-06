@@ -14,7 +14,7 @@ app.post("/send-email", async (req, res) => {
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: process.env.EMAIL_PORT,
-      secure: true, 
+      secure: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -24,7 +24,7 @@ app.post("/send-email", async (req, res) => {
     const mailOptions = {
       from: process.env.EMAIL_USERNAME,
       to: process.env.EMAIL_RECIPIENT,
-      subject: "New Contact from Portfolio Form",
+      subject: `Portifolio mail - Message from ${name}`,
       text: `
         Name: ${name}
         Email: ${email}
